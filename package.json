@@ -1,0 +1,41 @@
+{
+  "name": "ttt-form-validator",
+  "version": "0.0.1",
+  "description": "Native JS form service classes(parser, validator); Additionally library provides base validators;",
+  "browser": "index.js",
+  "author": {
+    "name": "cbrgpl",
+    "email": "tttcbrg@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": "https://github.com/cbrgpl/ttt-form-validator/issues",
+    "email": "tttcbrg@gmail.com"
+  },
+  "homepage": "https://github.com/cbrgpl/ttt-form-validator",
+  "scripts": {
+    "start": "node libs/index.js",
+    "build": "webpack --env production --progress --watch --config-name main --config webpack.config.js",
+    "lint": "eslint",
+    "fix": "eslint --fix",
+    "test": "jest test"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
+    "babel-loader": "^8.2.3",
+    "eslint": "^8.6.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "jest": "^27.4.7",
+    "node-fetch": "^3.1.0",
+    "terser-webpack-plugin": "^5.3.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
