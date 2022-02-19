@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 1</title>
+</head>
+<body>
+    <h3>Form Example:</h3>
+
+    <form action="">
+        <h5>Enter ur email:</h5>
+        <input data-field-name="email" data-field-type="text" type="text">
+        <h5>Enter ur password:</h5>
+        <input data-field-name="password" data-field-type="text" type="password">
+
+        <h5>Select the countries u've been visited:</h5>
+        <div data-field-name="contry" data-field-type="multipleSelect" >
+            <input id="rus" value="russia" type="checkbox" > <label for="rus">russia</label>
+            <input id="can" value="canada" type="checkbox" > <label for="can">canada</label>
+            <input id="usa" value="usa" type="checkbox" > <label for="usa">usa</label>
+        </div>
+
+        <div>
+            <h5 style="display: inline-block;"> Remember you?</h5>
+        <input data-field-name="rememberMe" data-field-type="singleSelect" type="checkbox" >
+        </div>
+
+        <button > test </button>
+    </form>
+</body>
+</html>

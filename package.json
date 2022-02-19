@@ -18,8 +18,9 @@
   },
   "homepage": "https://github.com/cbrgpl/ttt-html-form-services",
   "scripts": {
-    "start": "node libs/index.js",
-    "build": "webpack --env production --progress --watch --config-name main --config webpack.config.js",
+    "node start": "node libs/index.js",
+    "webpack dev": "webpack serve  --env development --progress --config-name dev --config webpack.config.dev.js",
+    "build": "webpack --env production --progress --config-name main --config webpack.config.js",
     "lint": "eslint",
     "fix": "eslint --fix",
     "test": "jest test"
@@ -28,14 +29,17 @@
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.8",
     "babel-loader": "^8.2.3",
+    "clean-webpack-plugin": "^4.0.0",
     "eslint": "^8.6.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-standard": "^5.0.0",
+    "html-webpack-plugin": "^5.5.0",
     "jest": "^27.4.7",
     "node-fetch": "^3.1.0",
     "terser-webpack-plugin": "^5.3.0",
     "webpack": "^5.65.0",
-    "webpack-cli": "^4.9.1"
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.4"
   }
 }

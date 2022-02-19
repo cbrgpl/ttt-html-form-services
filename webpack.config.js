@@ -1,6 +1,4 @@
-const webpack = require( 'webpack' ),
-  terserPlugin = require( 'terser-webpack-plugin' ),
-  path = require( 'path' );
+const terserPlugin = require( 'terser-webpack-plugin' );
 
 const rules = {
   js: {
