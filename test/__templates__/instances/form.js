@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example 1</title>
-</head>
-<body>
-    <h3>Form Example:</h3>
-
-    <form id="form" action="">
-        <input value="my_email" data-field-name="email" data-field-type="text" type="text">
+module.exports.form = `
+<form id="form" action="">
+        <input data-field-name="email" data-field-type="text" type="text">
         <div data-field-name="country" data-field-type="multipleSelect" >
             <input id="rus" value="russia" type="checkbox" >
             <label for="rus">russia</label>
@@ -24,6 +14,5 @@
         <input data-field-name="rememberMe" data-field-type="singleSelect" type="checkbox" >
 
         <button > test </button>
-    </form>
-</body>
-</html>
+</form>
+`;

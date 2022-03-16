@@ -11,7 +11,7 @@ module.exports.FormValidator = class {
     const preparedValidations = new DeepObjectWrapper( {} );
     const deepValidations = new DeepObjectWrapper( validations );
 
-    const prepareValidations = ( sequenceOfKeys ) => {
+    const prepareValidation = ( sequenceOfKeys ) => {
       const subVal = deepValidations.get( sequenceOfKeys );
 
       if( subVal instanceof Validator ) {
@@ -20,12 +20,12 @@ module.exports.FormValidator = class {
         const validator = new Validator( () => subVal );
         preparedValidations.set( sequenceOfKeys, validator );
       } else {
-        propIterationWithCallback( subVal, prepareValidations, sequenceOfKeys );
+        propIterationWithCallback( subVal, prepareValidation, sequenceOfKeys );
       }
 
     };
 
-    propIterationWithCallback( deepValidations.value(), prepareValidations );
+    propIterationWithCallback( deepValidations.value(), prepareValidation );
 
     return preparedValidations;
   }
@@ -71,7 +71,7 @@ module.exports.FormValidator = class {
       error: false,
       validators: {},
       messages: [],
-      _valiationObject: true,
+      _validationObject: true,
     };
 
     for( const validator in validators ) {
@@ -123,6 +123,6 @@ module.exports.FormValidator = class {
   }
 
   subResultIsFieldValidation( object ) {
-    return !!object._valiationObject;
+    return !!object._validationObject;
   }
 };

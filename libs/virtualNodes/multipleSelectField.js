@@ -1,6 +1,6 @@
 const { VirtualElement } = require( './virtualElement' );
 
-module.exports.MultipleSelectField = class extends VirtualElement{
+module.exports.MultipleSelectField = class MultipleSelectField extends VirtualElement{
   constructor( ...params ) {
     super( ...params );
 

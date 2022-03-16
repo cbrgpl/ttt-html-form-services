@@ -1,6 +1,7 @@
 module.exports.Validator = class {
   constructor( getFn, params, message = null ) {
     this.fn = getFn( params );
+    this.params = params;
     this.message = this.getMessageCallback( message );
   }
 
@@ -24,13 +25,13 @@ module.exports.Validator = class {
     return this.fn( value );
   }
 
-  getResultObject( success ) {
+  getResultObject( isSuccess ) {
     const result = {
-      error: !success,
+      error: !isSuccess,
     };
 
-    if( !success && this.isMessage() ) {
-      result.message = this.message();
+    if( !isSuccess && this.isMessage() ) {
+      result.message = this.message( this.params );
     }
 
     return result;

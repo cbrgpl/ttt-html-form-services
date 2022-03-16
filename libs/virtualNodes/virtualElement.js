@@ -1,6 +1,6 @@
-const ErrorWithDescription = require( '../error/errorWithDescription' );
+const { ErrorWithDescription } = require( '../error/errorWithDescription' );
 
-module.exports.VirtualElement = class {
+module.exports.VirtualElement = class VirtualElement {
   constructor( domElement, name ) {
     this.domElement = domElement;
     this.name = name;

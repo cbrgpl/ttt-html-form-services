@@ -1,6 +1,6 @@
 const { VirtualElement } = require( './virtualElement' );
 
-module.exports.TextField = class extends VirtualElement{
+module.exports.TextField = class TextField extends VirtualElement{
   constructor( ...params ) {
     super( ...params );
   }

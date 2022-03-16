@@ -65,4 +65,5 @@
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     "tailwindCSS.emmetCompletions": true,
+    "jest.jestCommandLine": "npm test --",
 }
