@@ -7,16 +7,8 @@ const {
 const { parseNodeAttrs } = require( './../service/parseNodeAttrs' );
 const  { FormFieldTypeError } = require( '../error/FormFieldTypeError' );
 
-const FORM_FIELD_TYPES = {
-  TEXT: 'text',
-  SINGLE_SELECT: 'singleSelect',
-  MULTIPLE_SELECT: 'multipleSelect',
-};
-
-const listOfFormAttrs = [
-  'data-field-name',
-  'data-field-type'
-];
+const { FORM_FIELD_TYPES } = require( './../enum/formFieldTypes.js' );
+const { FIELD_ATTRS } = require( './../enum/fieldAttrs.js' );
 
 // data-field-name="NAME"
 // data-field-type="TYPE"
@@ -41,7 +33,7 @@ module.exports.VirtualFormFactory = class VirtualFormFactory {
   }
 
   static getVirtualField( $field ) {
-    const { 'data-field-name': name, 'data-field-type': type } = parseNodeAttrs( $field, listOfFormAttrs );
+    const { 'data-field-name': name, 'data-field-type': type } = parseNodeAttrs( $field, FIELD_ATTRS );
     const virtualField = VirtualFormFactory.createVirtualField( $field, name, type );
 
     return {

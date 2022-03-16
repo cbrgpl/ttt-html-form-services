@@ -1,6 +1,6 @@
 {
   "name": "ttt-html-form-services",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Native JS form service classes(parser, validator); Additionally library provides base validators;",
   "browser": "index.js",
   "author": {
@@ -23,7 +23,7 @@
     "build": "webpack --env production --progress --config-name main --config webpack.config.js",
     "lint": "eslint",
     "fix": "eslint --fix",
-    "test": "jest test"
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
@@ -35,7 +35,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-standard": "^5.0.0",
     "html-webpack-plugin": "^5.5.0",
-    "jest": "^27.4.7",
+    "jest": "^27.5.1",
     "node-fetch": "^3.1.0",
     "terser-webpack-plugin": "^5.3.0",
     "webpack": "^5.65.0",

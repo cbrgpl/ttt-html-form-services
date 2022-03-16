@@ -1,4 +1,3 @@
-
 module.exports.FormManipulator = class {
   constructor( virtualForm ) {
     this.virtualForm = virtualForm;
