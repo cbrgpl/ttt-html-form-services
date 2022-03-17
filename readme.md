@@ -6,8 +6,6 @@ Js Library provides utilities that able parse and validate HTML Forms; Library o
 
 Library provides:
 
-
-
     - Form Parser
     - Form Validator
     - Validator
@@ -26,6 +24,21 @@ Library provides:
 `npm i --save ttt-html-form-utils`
 
 <br><br><br><br>
+
+# HTML Meta information
+
+Library uses data-attributes to detect which nodes are fields and type of field;
+
+**data-field-name** - used to detect field name
+**data-field-type** - used to detect field's type
+
+Available Types:
+
+- text
+- multipleSelect
+- singleSelect
+
+Look at [example](./example/index.html) to get more details how it looks;
 
 # Getting Started
 

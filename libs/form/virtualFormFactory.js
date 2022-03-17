@@ -10,12 +10,6 @@ const  { FormFieldTypeError } = require( '../error/FormFieldTypeError' );
 const { FORM_FIELD_TYPES } = require( './../enum/formFieldTypes.js' );
 const { FIELD_ATTRS } = require( './../enum/fieldAttrs.js' );
 
-// data-field-name="NAME"
-// data-field-type="TYPE"
-//      text
-//      multipleSelect
-//      singleSelect
-
 module.exports.VirtualFormFactory = class VirtualFormFactory {
 
   static createVirtualForm( $formNode ) {
