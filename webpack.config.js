@@ -19,6 +19,7 @@ module.exports = function ( env, argv ) {
     name: 'main',
     entry: {
       'dist/index': './bundle.js',
+      'dist/validators': './validators-bundle.js',
     },
     output: {
       path: __dirname,

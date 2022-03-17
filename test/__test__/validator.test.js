@@ -78,3 +78,17 @@ test( 'getResultObject; false; {error: true, message: [1, 2]}, ', () => {
     return validator.getResultObject( false );
   } ) ).toEqual( { error: true, message: [ 1, 2 ] } );
 } );
+
+test( 'custom validator creation', () => {
+  expect( getFnResult( () => {
+    const getValidationFn = ( minLength ) => ( value ) => value.length >= minLength && ( new RegExp( /[A-Z]/g ) ).test( value );
+    const minLength = 6;
+    const getMessage = ( minLength ) => `minLength should be at least ${ minLength }`;
+    const passwordValidator = new Validator( getValidationFn, minLength, getMessage );
+
+    return passwordValidator.getValidationResult( 'pass' );
+  } ) ).toEqual( {
+    error: true,
+    message: 'minLength should be at least 6',
+  } );
+} );

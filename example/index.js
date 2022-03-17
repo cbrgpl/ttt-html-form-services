@@ -5,14 +5,21 @@ const { EmailValidator } = require( '@form/../validators/email.js' );
 
 const emailValidator = new EmailValidator();
 
+const { Validator } = require( './validator.js' );
+
+const getValidationFn = ( minLength ) => ( value ) => value.length >= minLength && ( new RegExp( /[A-Z]/g ) ).test( value );
+const minLength = 6;
+const getMessage = ( minLength ) => `minLength should be at least ${ minLength }`;
+
+const passwordValidator = new Validator( getValidationFn, minLength, getMessage );
+
 const $form = document.querySelector( 'form' );
 const $button = document.querySelector( 'button' );
 
-const email = ( val ) => val;
-const required = ( val ) => val;
-const password = ( val ) => val;
-const atLeast = ( val ) => val;
-const truly = ( val ) => val;
+const required = ( val ) => !!val;
+const password = ( val ) => val.length > 6 && /[A-Z]/.test( val );
+const atLeast = ( minLength ) => ( val ) => val.length >= minLength;
+const truly = ( val ) => val === true;
 
 const validationObject = {
   formData: {
@@ -21,26 +28,16 @@ const validationObject = {
       email: emailValidator,
     },
     password: {
-      required,
-      password
+      passwordValidator
     },
   },
-  // country: {
-  //   required,
-  //   atLeast: atLeast( 1 )
-  // },
-  // rememberMe: {
-  //   truly,
-  // }
-};
-
-const testData = {
-  formData: {
-    email: 'cybirgpl@.com',
-    password: 'qweqew',
+  country: {
+    required,
+    atLeast: atLeast( 1 )
   },
-  country: [ 'russian' ],
-  rememberMe: true
+  rememberMe: {
+    truly,
+  }
 };
 
 const formValidator = new FormValidator( validationObject );
@@ -50,9 +47,6 @@ $button.addEventListener( 'click', ( event ) => {
   const virtualForm = VirtualFormFactory.createVirtualForm( $form );
   const formManipulator = new FormManipulator( virtualForm );
   const formData = formManipulator.getForm();
-  console.log( formData );
 
-  const result = formValidator.validate( testData );
-  console.log( 'validation', result );
-
+  const result = formValidator.validate( formData );
 } );

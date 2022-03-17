@@ -1,8 +1,8 @@
 {
-  "name": "ttt-html-form-services",
-  "version": "0.0.2",
+  "name": "ttt-html-form-utils",
+  "version": "1.0.0",
   "description": "Native JS form service classes(parser, validator); Additionally library provides base validators;",
-  "browser": "index.js",
+  "browser": "dist/",
   "author": {
     "name": "cbrgpl",
     "email": "tttcbrg@gmail.com"
@@ -10,13 +10,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cbrgpl/ttt-html-form-services.git"
+    "url": "https://github.com/cbrgpl/ttt-html-form-utils.git"
   },
   "bugs": {
-    "url": "https://github.com/cbrgpl/ttt-html-form-services/issues",
+    "url": "https://github.com/cbrgpl/ttt-html-form-utils/issues",
     "email": "tttcbrg@gmail.com"
   },
-  "homepage": "https://github.com/cbrgpl/ttt-html-form-services",
+  "homepage": "https://github.com/cbrgpl/ttt-html-form-utils",
   "scripts": {
     "node start": "node libs/index.js",
     "webpack dev": "webpack serve  --env development --progress --config-name dev --config webpack.config.dev.js",
